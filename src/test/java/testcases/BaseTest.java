@@ -33,7 +33,7 @@ public abstract class BaseTest {
 		options.addArguments("-–no-sandbox");
 		options.addArguments("window-size=1200,1100");
 
-		driver.set(new ChromeDriver());
+		driver.set(new ChromeDriver(options));
 		driver.get().manage().window().maximize();
 		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		// launch our application
