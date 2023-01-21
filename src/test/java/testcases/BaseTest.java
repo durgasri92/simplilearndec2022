@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -27,6 +28,7 @@ public abstract class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	protected void setUp() {
 		// setting up chromedriver
+
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");// Bypass OS security model
 		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
