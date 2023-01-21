@@ -27,6 +27,11 @@ public abstract class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	protected void setUp() {
 		// setting up chromedriver
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");// Bypass OS security model
+		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+		options.addArguments("-–no-sandbox");
+		options.addArguments("window-size=1200,1100");
 
 		driver.set(new ChromeDriver());
 		driver.get().manage().window().maximize();
